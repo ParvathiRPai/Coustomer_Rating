@@ -1,8 +1,9 @@
 const express=require('express');
+require('./services/passport');
+const authRoutes=require('./routes/authroutes')
 const app=express();
-app.get('/',(req, res)=> {
-    res.send({bye:'buddy'});
-});
+
+authRoutes(app);
 
 const PORT=process.env.PORT || 5000 ;
 
